@@ -1,0 +1,25 @@
+<h1>Default Calculator</h1>
+
+<div class="calc">
+  <div class="calc-container">
+    <input
+      #calcView
+      class="calc-container__control"
+      type="number"
+      [formControl]="calcControl"
+      appOnlyNumbers
+      [onlyNumbers]="true"
+
+    >
+  </div>
+
+  <div class="calc-container repeat-3">
+    <div
+      class="calc-container__btn"
+      *ngFor="let button of buttons"
+      (click)="onClickButton(button)"
+    >
+      <span>{{button}}</span>
+    </div>
+  </div>
+</div>
